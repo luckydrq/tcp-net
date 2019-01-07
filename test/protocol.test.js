@@ -24,7 +24,7 @@ describe('test/protocol.test.js', () => {
   beforeEach(mm.restore);
 
   it('should implement #write method', done => {
-    const server = net.createServer().listen(() => {
+    const server = net.createServer().listen(0, '127.0.0.1', () => {
       const host = server.address().address;
       const port = server.address().port;
       const client = new Connection({
@@ -52,7 +52,7 @@ describe('test/protocol.test.js', () => {
         assert.equal(e.message, 'should be implemented!');
         done();
       });
-    }).listen(() => {
+    }).listen(0, '127.0.0.1', () => {
       const host = server.address().address;
       const port = server.address().port;
       const client = new Connection({
