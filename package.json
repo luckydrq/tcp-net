@@ -1,0 +1,42 @@
+{
+  "name": "tcp-net",
+  "version": "1.0.0",
+  "keywords": [
+    "tcp",
+    "net",
+    "socket"
+  ],
+  "ci": {
+    "versions": [
+      "8",
+      "10"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint index.js lib test --fix --cache",
+    "test": "tnpm run lint && egg-bin test",
+    "ci": "egg-bin cov"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "devDependencies": {
+    "egg-bin": "4",
+    "mm": "2",
+    "eslint": "5",
+    "eslint-config-egg": "7",
+    "pedding": "^1.1.0"
+  },
+  "dependencies": {
+    "await-event": "^2.1.0",
+    "byte": "^1.2.0",
+    "debug": "^3.0.1",
+    "is-type-of": "^1.2.0",
+    "sdk-base": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:luckydrq/tcp-net.git"
+  }
+}
