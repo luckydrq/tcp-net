@@ -24,10 +24,10 @@
   },
   "dependencies": {
     "await-event": "^2.1.0",
-    "byte": "^1.2.0",
-    "debug": "^3.0.1",
+    "byte": "2",
+    "debug": "4",
     "is-type-of": "^1.2.0",
-    "sdk-base": "^3.2.0"
+    "sdk-base": "3"
   },
   "engines": {
     "node": ">= 8.0.0"

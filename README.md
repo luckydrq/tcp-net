@@ -7,7 +7,6 @@
 **注意，本模块只支持node 8.x以上。**
 
 [![NPM version][npm-image]][npm-url]
-[![NPM quality][quality-image]][quality-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![David deps][david-image]][david-url]
@@ -17,20 +16,18 @@
 
 [npm-image]: https://img.shields.io/npm/v/@luckydrq/tcp-net.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@luckydrq/tcp-net
-[quality-image]: http://npm.packagequality.com/shield/@luckydrq/tcp-net.svg?style=flat-square
-[quality-url]: http://packagequality.com/#?package=@luckydrq/tcp-net
-[travis-image]: https://img.shields.io/travis/luckydrq/@luckydrq/tcp-net.svg?style=flat-square
-[travis-url]: https://travis-ci.org/luckydrq/@luckydrq/tcp-net
-[codecov-image]: https://img.shields.io/codecov/c/github/luckydrq/@luckydrq/tcp-net.svg?style=flat-square
-[codecov-url]: https://codecov.io/gh/luckydrq/@luckydrq/tcp-net
-[david-image]: https://img.shields.io/david/luckydrq/@luckydrq/tcp-net.svg?style=flat-square
-[david-url]: https://david-dm.org/luckydrq/@luckydrq/tcp-net
+[travis-image]: https://img.shields.io/travis/luckydrq/tcp-net.svg?style=flat-square
+[travis-url]: https://travis-ci.org/luckydrq/tcp-net
+[codecov-image]: https://img.shields.io/codecov/c/github/luckydrq/tcp-net.svg?style=flat-square
+[codecov-url]: https://codecov.io/gh/luckydrq/tcp-net
+[david-image]: https://img.shields.io/david/luckydrq/tcp-net.svg?style=flat-square
+[david-url]: https://david-dm.org/luckydrq/tcp-net
 [snyk-image]: https://snyk.io/test/npm/@luckydrq/tcp-net/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/@luckydrq/tcp-net
 [download-image]: https://img.shields.io/npm/dm/@luckydrq/tcp-net.svg?style=flat-square
 [download-url]: https://npmjs.org/package/@luckydrq/tcp-net
-[gitter-image]: https://img.shields.io/gitter/room/luckydrq/@luckydrq/tcp-net.svg?style=flat-square
-[gitter-url]: https://gitter.im/luckydrq/@luckydrq/tcp-net
+[gitter-image]: https://img.shields.io/gitter/room/luckydrq/tcp-net.svg?style=flat-square
+[gitter-url]: https://gitter.im/luckydrq/tcp-net
 
 ## Feature
 
