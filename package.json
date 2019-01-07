@@ -1,5 +1,5 @@
 {
-  "name": "tcp-net",
+  "name": "@luckydrq/tcp-net",
   "version": "1.0.0",
   "keywords": [
     "tcp",
