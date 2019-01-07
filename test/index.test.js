@@ -46,7 +46,7 @@ describe('test/index.test.js', () => {
         new Connection({
           socket,
         }).on('connect', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -77,7 +77,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, '');
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -111,7 +111,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, message);
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -144,7 +144,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, `xuezu-${packetId}`);
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -178,7 +178,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, 'true');
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -215,7 +215,7 @@ describe('test/index.test.js', () => {
           assert.equal(body.alier, true);
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -249,7 +249,7 @@ describe('test/index.test.js', () => {
             conn.write(body.name);
           }
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -284,7 +284,7 @@ describe('test/index.test.js', () => {
           assert.equal(body.name, 'xuezu');
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -325,7 +325,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, 'hi, xuezu');
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -356,7 +356,7 @@ describe('test/index.test.js', () => {
           done();
         })
           .on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -383,7 +383,7 @@ describe('test/index.test.js', () => {
         }).on('connect', () => {
           server.emit('server_connect');
         }).on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         new Connection({
@@ -406,7 +406,7 @@ describe('test/index.test.js', () => {
         }).on('connect', () => {
           server.emit('server_connect');
         }).on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -432,7 +432,7 @@ describe('test/index.test.js', () => {
         }).on('connect', () => {
           server.emit('server_connect');
         }).on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -463,7 +463,7 @@ describe('test/index.test.js', () => {
           assert.equal(packetType, 1);
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         new Connection({
@@ -493,7 +493,7 @@ describe('test/index.test.js', () => {
           .once('heartbeatTimeout', done)
           .on('error', () => {})
           .on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -516,7 +516,7 @@ describe('test/index.test.js', () => {
           socket,
           protocol: new LineBasedProtocol(),
         }).on('connect', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -548,7 +548,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, '');
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -583,7 +583,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, message);
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -625,7 +625,7 @@ describe('test/index.test.js', () => {
           assert.equal(body.name, `xuezu-${packetId}`);
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -668,7 +668,7 @@ describe('test/index.test.js', () => {
             done();
           }
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -705,7 +705,7 @@ describe('test/index.test.js', () => {
             done();
           }
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -755,7 +755,7 @@ describe('test/index.test.js', () => {
           assert.equal(body.name, 'xuezu');
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -799,7 +799,7 @@ describe('test/index.test.js', () => {
           assert.equal(body, 'hi, xuezu');
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -837,7 +837,7 @@ describe('test/index.test.js', () => {
           done();
         })
           .on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -862,7 +862,7 @@ describe('test/index.test.js', () => {
           socket,
           protocol: new LineBasedProtocol(),
         }).on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         new Connection({
@@ -885,7 +885,7 @@ describe('test/index.test.js', () => {
         }).on('connect', () => {
           server.emit('server_connect');
         }).on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -911,7 +911,7 @@ describe('test/index.test.js', () => {
         }).on('connect', () => {
           server.emit('server_connect');
         }).on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
@@ -942,7 +942,7 @@ describe('test/index.test.js', () => {
           assert.equal(packetType, 1);
           done();
         });
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         new Connection({
@@ -972,7 +972,7 @@ describe('test/index.test.js', () => {
           .once('heartbeatTimeout', done)
           .on('error', () => {})
           .on('close', done);
-      }).listen(() => {
+      }).listen(0, '127.0.0.1', () => {
         const host = server.address().address;
         const port = server.address().port;
         const client = new Connection({
