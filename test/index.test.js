@@ -23,6 +23,10 @@ const {
   LineBasedProtocol,
 } = require('..');
 
+function sleep(msec) {
+  return new Promise(resolve => setTimeout(resolve, msec));
+}
+
 describe('test/index.test.js', () => {
   beforeEach(mm.restore);
 
@@ -370,6 +374,32 @@ describe('test/index.test.js', () => {
           client.write({ name: 'xuezu' });
           client.end();
         });
+      });
+    });
+
+    it('should close connection properly when connect timeout', done => {
+      done = pedding(done, 3);
+
+      const server = net.createServer(socket => {
+        new Connection({
+          socket,
+          protocol: new LengthBasedProtocol(),
+        }).on('connect', () => {
+          server.emit('server_connect');
+        }).on('close', done);
+      }).listen(0, '127.0.0.1', () => {
+        const host = server.address().address;
+        const port = server.address().port;
+        new Connection({
+          host,
+          port,
+          connectTimeout: 1000,
+          connectCallback: () => sleep(5000),
+          protocol: new LengthBasedProtocol(),
+        }).on('error', e => {
+          assert.equal(e.name, 'ConnectionTimeOut');
+          done();
+        }).on('close', done);
       });
     });
 
@@ -851,6 +881,30 @@ describe('test/index.test.js', () => {
           client.write({ name: 'xuezu' });
           client.end();
         });
+      });
+    });
+
+    it('should close connection properly when connect timeout', done => {
+      done = pedding(done, 3);
+
+      const server = net.createServer(socket => {
+        new Connection({
+          socket,
+          protocol: new LineBasedProtocol(),
+        }).on('close', done);
+      }).listen(0, '127.0.0.1', () => {
+        const host = server.address().address;
+        const port = server.address().port;
+        new Connection({
+          host,
+          port,
+          connectTimeout: 1,
+          connectCallback: () => sleep(5000),
+          protocol: new LineBasedProtocol(),
+        }).on('error', e => {
+          assert.equal(e.name, 'ConnectionTimeOut');
+          done();
+        }).on('close', done);
       });
     });
 
