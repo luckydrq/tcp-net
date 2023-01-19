@@ -50,7 +50,9 @@ declare module '@luckydrq/tcp-net' {
   }
 
   interface IConnectionOptions {
-    socket: Socket;
+    socket?: Socket;
+    host?: string;
+    port?: number;
     protocol?: Protocol;
     idleTimeout?: number;
     finWaitTimeout?: number;
