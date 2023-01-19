@@ -1,4 +1,9 @@
 
+1.2.1 / 2023-01-19
+==================
+
+  * fix(types): IConnectionOptions should accept host and port
+
 1.2.0 / 2023-01-19
 ==================
 
