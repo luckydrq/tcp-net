@@ -68,8 +68,8 @@ declare module '@luckydrq/tcp-net' {
     get remoteAddress(): string | undefined;
     get remotePort(): number | undefined;
     read: (data: Buffer) => void;
-    write: (
-      data: Buffer | Record<string, any> | string | number | boolean | null,
+    write: <T = Buffer | Record<string, any> | string | number | boolean | null>(
+      data: T,
       pkt?: IPacket
     ) => void;
     end: () => void;
